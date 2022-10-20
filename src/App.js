@@ -1,10 +1,20 @@
-import React from "react"
+import React from "react";
+import  {BrowserRouter, Routes, Route} from 'react-router-dom'; 
+import Color from "./components/Color";
+import Colors from "./components/Colors";
+import New from "./components/New";
 
 function App() {
   return (
-    <div className="App">
-     <h1>My React App</h1>
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route index path="/" element={<Colors />} />
+      <Route index path="/colors" element={<Colors />} />
+      <Route path="/colors/:color" element={ <Color />} />
+      <Route path="/colors/new" element={<New />} />
+      <Route path="*" />
+    </Routes>
+    </BrowserRouter>
   );
 }
 
