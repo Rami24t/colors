@@ -1,0 +1,112 @@
+/*css mini reset*/
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+    padding: 0;
+    font-weight: normal;
+  }
+  body{
+    margin: 0%;
+  }
+  ol, ul {
+    list-style: none;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+/* colors css*/
+.colors header{
+    background-color: #222;
+    min-height: 200px;
+    color: #fff;
+    font-weight:900;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;    
+}
+.colors header a{
+    color: #fff;
+    font-size: 2rem;
+    padding-bottom: 12%;
+}
+.colors main{
+    text-align: center;
+}
+.colors main li{
+    list-style-type: none;
+}
+.colors footer button{
+    background-color: red;
+    color: white;
+}
+/* color css*/
+.color {
+    width: 100%;
+    font-size: 8vw;
+    text-align: center;
+    margin: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.color button{
+    font-size: 10vw;
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.new{
+    min-height: 100vh;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 1) 0%,
+        rgba(255, 154, 0, 1) 10%,
+        rgba(208, 222, 33, 1) 20%,
+        rgba(79, 220, 74, 1) 30%,
+        rgba(63, 218, 216, 1) 40%,
+        rgba(47, 201, 226, 1) 50%,
+        rgba(28, 127, 238, 1) 60%,
+        rgba(95, 21, 242, 1) 70%,
+        rgba(186, 12, 248, 1) 80%,
+        rgba(251, 7, 217, 1) 90%,
+        rgba(255, 0, 0, 1) 100%
+    );
+    padding: 12%;
+}
+.new form{
+    border-radius: 12px;
+    background-color: #ddd;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    padding: 10vw;
+    text-align: center;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+.new input, .new button{
+    display: block;
+    margin: 12px auto;
+    text-align: center;
+    min-width: 70px;
+    min-height: 40px;
+}
+.new input:not(input[type=color]){
+    padding: 12px;
+}
+.new button{
+    padding: 8px 12px;
+    margin: auto;
+}

@@ -1,7 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom'; 
 
-const Colors = () => {
+const Colors = ({colors, refreshColors}) => {
+    console.log(colors);
   return (
     <div className='colors'>
     <header>
@@ -11,17 +12,15 @@ const Colors = () => {
     <main>
         <p>Please select a color.</p>
         <ul>
-            <Link to="/colors/red">
-                <li>red</li>
-            </Link>
-            <Link to="/colors/green">
-                <li>green</li>
-            </Link>
-            <Link to="/colors/blue">
-                <li>blue</li>
-            </Link>
+        {colors?.map(color=>
+           (<Link key={color.id} to={`/colors/${color.name}`}>
+                <li key={color.id}>{color.name}</li>
+            </Link>))}
         </ul>
     </main>
+    <footer>
+        <button onClick={()=>{localStorage.removeItem('colorsArray'); refreshColors()}}>/!\ RESET DATABASE /!\</button>
+    </footer>
     </div>
   )
 }
