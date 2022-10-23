@@ -10,8 +10,7 @@ const LogIn = ({setLoggedIn, redirect}) => {
     const submit = (e) =>{
 //        setUserCreds({...userCreds, username: document.getElementsByName('username').value});
         e.preventDefault();
-        let found = savedUserCreds.find(user=>{console.log(user, userCreds);return user.username===userCreds.username && user.password === userCreds.password})
-        console.log(found);
+        let found = savedUserCreds.find(user=>{return user.username===userCreds.username && user.password === userCreds.password})
         if(found)
         {
             alert(`Logged in successful!\nLogged in as ${found.username}!`)
