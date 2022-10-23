@@ -1,16 +1,30 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+
+
 
 
 const Color = () => {
     const navigate = useNavigate();
     const {colorName} = useParams();
-    const [bgColor, setBgColor] = useState('');
-    useEffect(() => {
-       const color = ((JSON.parse(localStorage.getItem('colorsArray')))?.find(color=>color.name===colorName)) || {color:'#fff',name: 'white'};
-       setBgColor(color.color);
-    }, [])
-    
+    let bgColor = '#000';
+
+    const getColor = () => {
+      const colorArr = JSON.parse(localStorage.getItem('colorsArray'));
+      if(!colorArr)
+        {
+          navigate('/colors');
+        }
+        else {
+      const color = colorArr.find(color=>color.name===colorName);
+      if (color)
+        bgColor=(color.color);
+      else
+        navigate('/colors');
+      }
+      console.log('Runs')
+    }
+    getColor();
 //console.log(bgColor);
   return (
     <div className='color' style={{backgroundColor: bgColor}}>

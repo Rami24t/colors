@@ -1,12 +1,11 @@
 import './App.css';
 import React, { useEffect, useState } from "react";
-import  {BrowserRouter, Routes, Route} from 'react-router-dom'; 
+import  {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'; 
 import Color from "./components/Color";
 import Colors from "./components/Colors";
 import New from "./components/New";
 import colorsFile from './colorsFile';
-import Layout from "./Layout";
-import NoPage from './NoPage';
+// import NoPage from './NoPage';
 
 function App() {
 
@@ -23,13 +22,12 @@ refreshColors()
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}> 
-          <Route index path='colors' element={<Colors colors={colors} refreshColors={refreshColors} />} />
-          <Route index  element={<Colors colors={colors}  />} />
-          <Route path="colors/:colorName" element={ <Color />} />
-          <Route path="colors/new" element={<New setColors={setColors} />} />
-        </Route>
-          <Route path="*" element={<NoPage />} />
+          <Route  path='/colors' element={<Colors colors={colors} refreshColors={refreshColors} />} />
+          {/* <Route   element={<Colors colors={colors}  />} /> */}
+          <Route path="/colors/:colorName" element={ <Color />} />
+          <Route path="/colors/new" element={<New setColors={setColors} />} />
+          {/* <Route path="*" element={<NoPage />} /> */}
+          <Route path="*" element={ <Navigate to="/colors" replace />} />
       </Routes>
     </BrowserRouter>
   );

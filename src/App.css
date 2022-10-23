@@ -50,7 +50,7 @@ html {
 /* color css*/
 .color {
     width: 100%;
-    font-size: 8vw;
+    font-size: min(8vw,12vh);
     text-align: center;
     margin: auto;
     min-height: 100vh;
@@ -61,6 +61,7 @@ html {
 }
 .color button{
     font-size: 10vw;
+    font-size: min(9vw,16vh);
     background-color: transparent;
     border: none;
     text-decoration: underline;
