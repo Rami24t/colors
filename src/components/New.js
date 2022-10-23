@@ -1,21 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import { useNavigate } from "react-router-dom";
 
 const New = ({setColors}) => {
+
 const navigate = useNavigate();
     function onSubmit(e) {
         e.preventDefault();
         const oldArray = JSON.parse(localStorage.getItem('colorsArray'));
-        oldArray.push(newColor);
-        localStorage.setItem('colorsArray', JSON.stringify(oldArray));
+        localStorage.setItem('colorsArray', JSON.stringify([newColor,...oldArray]));
         navigate('/colors');
         setColors(JSON.parse(localStorage.getItem('colorsArray')))
     }
 const [newColor,setNewColor]=useState({id: Math.floor(Math.random()*100000), color: '', name: ''});
-
-useEffect(() => {
-
-}, [])
 
 
   return (
