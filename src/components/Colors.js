@@ -1,20 +1,20 @@
 import React from 'react';
 import {Link} from 'react-router-dom'; 
 
-const Colors = ({colors, refreshColors}) => {
+const Colors = ({colors, refreshColors, loggedIn}) => {
  //   console.log(colors);
   return (
     <div className='colors'>
     <header>
         <p>Welcome to the color factory.</p>
-        <Link to="/colors/new">Add a Color</Link>        
+        <Link to="/colors/new">{loggedIn?'A':'Log in to a'}dd a Color</Link>        
     </header>
     <main>
         <p>Please select a color.</p>
         <ul>
         {colors?.map(color=>
            (<Link key={color.id} to={`/colors/${color.name}`}>
-                <li key={color.id}>{color.name}</li>
+                <li key={color.id} style={{backgroundColor: color.color}}><span style={{backgroundColor: '#efe', paddingLeft: '10px', paddingRight: '10px'}}>{color.name}</span></li>
             </Link>))}
         </ul>
     </main>

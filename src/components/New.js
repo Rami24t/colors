@@ -1,18 +1,20 @@
 import React, { useState} from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 
-const New = ({setColors}) => {
+const New = ({setColors, loggedIn}) => {
+  const navigate = useNavigate();
+  const [newColor,setNewColor]=useState({id: Math.floor(Math.random()*100000), color: '#000000', name: ''});
 
-const navigate = useNavigate();
-    function onSubmit(e) {
-        e.preventDefault();
-        const oldArray = JSON.parse(localStorage.getItem('colorsArray'));
-        localStorage.setItem('colorsArray', JSON.stringify([newColor,...oldArray]));
-        navigate('/colors');
-        setColors(JSON.parse(localStorage.getItem('colorsArray')))
-    }
-const [newColor,setNewColor]=useState({id: Math.floor(Math.random()*100000), color: '', name: ''});
-
+  function onSubmit(e) {
+      e.preventDefault();
+      const oldArray = JSON.parse(localStorage.getItem('colorsArray'));
+      localStorage.setItem('colorsArray', JSON.stringify( ([newColor,...oldArray].sort((a,b)=> a.name.localeCompare(b.name))) ));
+      navigate('/colors');
+      setColors(JSON.parse(localStorage.getItem('colorsArray')))
+  }
+  
+  if(!loggedIn)
+  return <Navigate to='/login' replace/>
 
   return (
     <div className="new">
