@@ -1,3 +1,7 @@
+# A React-ColorApp-Project using Javascript, React.js, HTML5, and CSS3...
+
+## Live version: 
+
 # React Router Color Factory
 
 The goal of this exercise will be to use React Router to build an app that lets you view colors and add new colors.
