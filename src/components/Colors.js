@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom'; 
 
 const Colors = ({colors, refreshColors}) => {
-    console.log(colors);
+ //   console.log(colors);
   return (
     <div className='colors'>
     <header>
