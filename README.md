@@ -1,10 +1,13 @@
-# A React-ColorApp-Project using Javascript, React.js, HTML5, and CSS3...
+# React Router Color Factory challenge
+Color App Project made using Javascript, React.js, HTML5, and CSS3...
 
-## Live Demo version: 
+## Live Demo version
 - link: https://colors-delta-five.vercel.app/colors
 - creds: username: 'Rami' with password: '123456789'
 
-# React Router Color Factory
+## Challenge
+
+### React Router Color Factory
 
 The goal of this exercise will be to use React Router to build an app that lets you view colors and add new colors.
 
