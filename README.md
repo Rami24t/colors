@@ -1,7 +1,7 @@
 # React Router Color Factory challenge
 Color App Project made using Javascript, React.js, HTML5, and CSS3...
 
-## Live Demo version
+## Live Demo version of my solution
 - link: https://colors-delta-five.vercel.app/colors
 - creds: username: 'Rami' with password: '123456789'
 
