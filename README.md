@@ -1,6 +1,8 @@
 # A React-ColorApp-Project using Javascript, React.js, HTML5, and CSS3...
 
-## Live version: 
+## Live Demo version: 
+- link: https://colors-delta-five.vercel.app/colors
+- creds: username: 'Rami' with password: '123456789'
 
 # React Router Color Factory
 
